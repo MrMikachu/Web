@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kahvila Kaarna – coffee, buns and soup by the river</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <p class="logo"><a href="index.html">Kahvila Kaarna</a></p>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#order">Your order</a></li>
+        <li><a href="#hours">Opening hours</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Coffee, buns and soup by the river</h1>
+    <p>Kahvila Kaarna is a small café and bakery in the centre of Seinäjoki. We bake everything ourselves every morning, roast our coffee with a local roastery, and make one soup a day from what the farms nearby have to offer.</p>
+
+    <section id="menu" aria-labelledby="menu-title">
+      <h2 id="menu-title">On the menu today</h2>
+
+      <div class="filters" role="group" aria-label="Show">
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="vegan" aria-pressed="false">Vegan</button>
+        <button type="button" data-filter="gluten-free" aria-pressed="false">Gluten-free</button>
+      </div>
+
+      <p id="menu-status" role="status"></p>
+
+      <div id="menu-list" class="cards">
+        <article data-diet="">
+          <h3>Cinnamon bun</h3>
+          <p>Our own korvapuusti, baked at seven every morning and gone by two. Ask for a warm one.</p>
+          <p class="price">3,50 €</p>
+          <button type="button" class="order">Add to order</button>
+          <p class="count"></p>
+        </article>
+
+        <article class="highlight" data-diet="gluten-free">
+          <h3>Soup of the day</h3>
+          <p>Creamy salmon soup with dill and potatoes. Rye bread on the side, or gluten-free bread if you ask.</p>
+          <p class="tags">Gluten-free</p>
+          <p class="price">12,90 €</p>
+          <button type="button" class="order">Add to order</button>
+          <p class="count"></p>
+        </article>
+
+        <article data-diet="vegan gluten-free">
+          <h3>Filter coffee</h3>
+          <p>A medium roast from the roastery down the road. The second cup is on us.</p>
+          <p class="tags">Vegan · Gluten-free</p>
+          <p class="price">2,80 €</p>
+          <button type="button" class="order">Add to order</button>
+          <p class="count"></p>
+        </article>
+
+        <article data-diet="vegan gluten-free">
+          <h3>Oat latte</h3>
+          <p>Double espresso with steamed oat milk. Ask for a dash of cardamom.</p>
+          <p class="tags">Vegan · Gluten-free</p>
+          <p class="price">4,20 €</p>
+          <button type="button" class="order">Add to order</button>
+          <p class="count"></p>
+        </article>
+
+        <article data-diet="vegan">
+          <h3>Karelian pie</h3>
+          <p>Thin rye crust filled with rice porridge, served with oat spread instead of egg butter.</p>
+          <p class="tags">Vegan</p>
+          <p class="price">2,90 €</p>
+          <button type="button" class="order">Add to order</button>
+          <p class="count"></p>
+        </article>
+
+        <article data-diet="gluten-free">
+          <h3>Carrot cake</h3>
+          <p>Made with almond flour and topped with cream cheese frosting.</p>
+          <p class="tags">Gluten-free</p>
+          <p class="price">4,80 €</p>
+          <button type="button" class="order">Add to order</button>
+          <p class="count"></p>
+        </article>
+      </div>
+
+      <button type="button" id="add-special" class="secondary">Show today’s special</button>
+
+      <template id="card-template">
+        <article data-diet="">
+          <h3>Name</h3>
+          <p class="description">Description</p>
+          <p class="price">0,00 €</p>
+          <button type="button" class="order">Add to order</button>
+          <p class="count"></p>
+        </article>
+      </template>
+    </section>
+
+    <section id="order" aria-labelledby="order-title">
+      <h2 id="order-title">Your order</h2>
+      <p id="order-summary" role="status">Nothing added yet.</p>
+      <p class="note">We don’t take orders online. Show this list at the counter, and we’ll have it ready while you find a table.</p>
+    </section>
+
+    <section id="hours" aria-labelledby="hours-title">
+      <h2 id="hours-title">Opening hours</h2>
+      <p id="today-hours"></p>
+      <table>
+        <caption>Opening hours from September to May</caption>
+        <thead>
+          <tr>
+            <th scope="col">Day</th>
+            <th scope="col">Open</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-days="1 2 3 4 5">
+            <td>Monday to Friday</td>
+            <td>7.30–17.00</td>
+          </tr>
+          <tr data-days="6">
+            <td>Saturday</td>
+            <td>9.00–16.00</td>
+          </tr>
+          <tr data-days="0">
+            <td>Sunday</td>
+            <td>11.00–16.00</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>On public holidays we keep Sunday hours. Lunch is served every day from 11.00 until the soup runs out.</p>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Find us</h2>
+      <address>
+        Kahvila Kaarna<br>
+        Rantakatu 12, 60100 Seinäjoki<br>
+        <a href="tel:+358401234567">040&nbsp;123&nbsp;4567</a><br>
+        <a href="mailto:hello@kahvilakaarna.example">hello@kahvilakaarna.example</a>
+      </address>
+      <p>Parking behind the building. The entrance has no steps.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Kahvila Kaarna is a fictional café made for the SEAMK web courses.</p>
+  </footer>
+</body>
+</html>
