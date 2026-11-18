@@ -1,0 +1,15 @@
+body {
+    font-family: system-ui, 
+        sans-serif;
+    line-height: 1,5;
+    background-color: #1e2b42;
+}
+h1 {
+    color: #e4d6b4;
+}
+a {
+    color:#e05f23;
+}
+p {
+    color: #e4d6b4;
+}
